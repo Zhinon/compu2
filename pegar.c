@@ -25,6 +25,9 @@ int main(int argc, char *argv[])
 	int ultimo= argc - 1;
 	fd = open (argv[ultimo],O_RDWR|O_APPEND|O_CREAT,S_IRUSR|S_IWUSR);
 	while(i<ultimo){
+		// char *strtok(char *str, const char *delim);
+		// sirve para parcear, el primer parametro es el buffer y el segundo es el delimitador
+
 		fd2 = open(argv[i],O_RDWR);
 		leido = read(fd2, buffer, MAX_SIZE);
 		write(fd, buffer, leido);
